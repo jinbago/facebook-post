@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>改行保持</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>改行保持</h1>
+    <p class="description">テキストを入力して変換ボタンをクリックすると、Facebook/Instagramで改行が保持されます</p>
+    
+    <textarea id="inputText" placeholder="ここにテキストを貼り付けてください..."></textarea>
+    
+    <button id="convertButton">変換してコピー</button>
+    
+    <div id="message" class="message hidden">コピーしました！</div>
+    
+    <div class="info">
+      <h3>使い方</h3>
+      <ul>
+        <li>テキストエリアに文章を貼り付ける</li>
+        <li>「変換してコピー」ボタンをクリック</li>
+        <li>そのままFacebook/Instagramにペースト</li>
+      </ul>
+      <p class="tip">または、右クリックメニューの「改行を保持してコピー」を使用</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
