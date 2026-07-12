@@ -26,6 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const message = document.getElementById('message');
   let messageTimeout;
 
+  chrome.storage.local.get('draftText', ({ draftText }) => {
+    if (draftText) {
+      inputText.value = draftText;
+    }
+  });
+
+  inputText.addEventListener('input', () => {
+    chrome.storage.local.set({ draftText: inputText.value });
+  });
+
+  document.getElementById('clearButton').addEventListener('click', () => {
+    inputText.value = '';
+    chrome.storage.local.remove('draftText');
+  });
+
   convertButton.addEventListener('click', async () => {
     const text = inputText.value;
     
